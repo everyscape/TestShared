@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EveryScape.Utilities.Geographic
 {
-	public class Geographic
+	public static class Geographic
 	{
 		/// <summary>
 		/// Returns an angle indicating the bearing of "to" relative to "from".
@@ -13,7 +13,7 @@ namespace EveryScape.Utilities.Geographic
 		/// <param name="from"></param>
 		/// <param name="to"></param>
 		/// <returns></returns>
-		public Angle GetBearing(Location from, Location to)
+		public static Angle GetBearing(Location from, Location to)
 		{
 			double a = Math.Sin(to.Longitude.Radians - from.Longitude.Radians) * Math.Cos(to.Latitude.Radians);
 			double b = Math.Cos(from.Latitude.Radians) * Math.Sin(to.Latitude.Radians);
@@ -29,7 +29,7 @@ namespace EveryScape.Utilities.Geographic
 		/// <param name="from"></param>
 		/// <param name="to"></param>
 		/// <returns></returns>
-		public Distance GetFlatDistance(Location from, Location to)
+		public static Distance GetFlatDistance(Location from, Location to)
 		{
 			double dLat = to.Latitude.Radians - from.Latitude.Radians;
 			double dLong = to.Longitude.Radians - from.Longitude.Radians;
@@ -49,7 +49,7 @@ namespace EveryScape.Utilities.Geographic
 		/// <param name="from"></param>
 		/// <param name="to"></param>
 		/// <returns></returns>
-		public Distance GetActualDistance(Location from, Location to)
+		public static Distance GetActualDistance(Location from, Location to)
 		{
 			double a = GetFlatDistance(from, to).Kilometers;
 			double b = Math.Abs(to.Altitude.Kilometers - from.Altitude.Kilometers);
@@ -64,7 +64,7 @@ namespace EveryScape.Utilities.Geographic
 		/// <param name="from"></param>
 		/// <param name="to"></param>
 		/// <returns></returns>
-		public Angle GetRelativePitch(Location from, Location to)
+		public static Angle GetRelativePitch(Location from, Location to)
 		{
 			double x = GetFlatDistance(from, to).Kilometers;
 			double y = to.Altitude.Kilometers - from.Altitude.Kilometers;
@@ -78,7 +78,7 @@ namespace EveryScape.Utilities.Geographic
 		/// <param name="heading"></param>
 		/// <param name="bearing"></param>
 		/// <returns></returns>
-		public Angle GetYaw(Angle fromHeading, Angle toBearing)
+		public static Angle GetYaw(Angle fromHeading, Angle toBearing)
 		{
 			return new Angle(((toBearing.Degrees - fromHeading.Degrees) + 360) % 360, Units.Angular.DecimalDegrees);
 		}
