@@ -40,6 +40,7 @@ namespace EveryScape.Utilities.Geographic
 		{
 			_latitude = latitude;
 			_longitude = longitude;
+			_altitude = altitude;
 		}
 
 		public Angle Latitude
