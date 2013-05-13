@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geographic", "Geographic\Geographic.csproj", "{C369109A-200C-404E-AE15-864F5D7443F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EveryScape.Utilities.Geographic", "Geographic\EveryScape.Utilities.Geographic.csproj", "{C369109A-200C-404E-AE15-864F5D7443F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
